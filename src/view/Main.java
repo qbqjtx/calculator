@@ -5,6 +5,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import model.Parser;
@@ -68,9 +69,17 @@ public class Main extends Application {
 
         // add keyboard support
         scene.setOnKeyTyped(event -> { // keyboard event
-            if ((INPUTS+BACKSPACE+MULTIPLY+DIVIDE+"C=").contains(event.getCharacter()))
+            if (("1234567890+-=C().").contains(event.getCharacter()))
                 receiveInput(event.getCharacter());
+            else if (event.getCharacter().equals("*"))
+                receiveInput(MULTIPLY);
+            else if (event.getCharacter().equals("/"))
+                receiveInput(DIVIDE);
         });
+        // special treatment to backspace
+        scene.setOnKeyPressed(event -> { if (event.getCode().equals(KeyCode.BACK_SPACE)) receiveInput(BACKSPACE); });
+        // special treatment to return
+        scene.setOnKeyPressed(event -> { if (event.getCode().equals(KeyCode.ENTER)) receiveInput("="); });
     }
 
 
@@ -113,7 +122,10 @@ public class Main extends Application {
                 display1.setText(Double.toString(new Parser(oldText).parseToTree().evaluate()));
                 displayIsClean = true;
             } catch (IllegalArgumentException e ) {
-                display1.setText("Syntax Error");
+                if (e.getMessage().equals("can't divide by 0"))
+                    display1.setText("Division By Zero Error");
+                else
+                    display1.setText("Syntax Error");
             }
         }
     }
