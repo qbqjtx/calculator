@@ -65,6 +65,12 @@ public class Main extends Application {
         Scene scene = new Scene(gridPane, 256, 430);
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        // add keyboard support
+        scene.setOnKeyTyped(event -> { // keyboard event
+            if ((INPUTS+BACKSPACE+MULTIPLY+DIVIDE+"C=").contains(event.getCharacter()))
+                receiveInput(event.getCharacter());
+        });
     }
 
 
@@ -74,6 +80,10 @@ public class Main extends Application {
 
     public void buttonIsPressed(Button btn) {
         String symbol = btn.getText();
+        receiveInput(symbol);
+    }
+
+    public void receiveInput(String symbol) {
         String oldText = display2.getText();
         if (INPUTS.contains(symbol)) {
             if (displayIsClean) {
@@ -91,12 +101,14 @@ public class Main extends Application {
             displayIsClean = true;
         }
         else if (symbol.equals(BACKSPACE)) {
-            if (oldText.length() == 1)
+            if (oldText.length() == 1) {
                 display2.setText("0");
+                displayIsClean = true;
+            }
             else if (!oldText.isEmpty())
                 display2.setText(oldText.substring(0, oldText.length()-1));
         }
-        else {// it's =
+        else {// it's "="
             try {
                 display1.setText(Double.toString(new Parser(oldText).parseToTree().evaluate()));
                 displayIsClean = true;
