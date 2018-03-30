@@ -4,7 +4,6 @@ import model.ExpTree;
 import model.Expression;
 import model.Parser;
 import org.junit.Test;
-import temp.Exptree;
 
 import static org.junit.Assert.*;
 
