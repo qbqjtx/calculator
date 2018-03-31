@@ -1,0 +1,4 @@
+priv/jj/calculator/model/Expression.class
+priv/jj/calculator/model/Parser.class
+priv/jj/calculator/model/ExpTree.class
+priv/jj/calculator/view/Main.class
