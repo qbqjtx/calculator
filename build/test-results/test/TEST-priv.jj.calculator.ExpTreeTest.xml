@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="priv.jj.calculator.ExpTreeTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-04-07T21:30:42" hostname="Adranoobs-MacBook-Pro.local" time="0.008">
+  <properties/>
+  <testcase name="evaluate1" classname="priv.jj.calculator.ExpTreeTest" time="0.003"/>
+  <testcase name="evaluate2" classname="priv.jj.calculator.ExpTreeTest" time="0.001"/>
+  <testcase name="evaluate3" classname="priv.jj.calculator.ExpTreeTest" time="0.002"/>
+  <testcase name="evaluate4" classname="priv.jj.calculator.ExpTreeTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
