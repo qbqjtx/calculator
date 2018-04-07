@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="priv.jj.calculator.ParserTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-04-07T21:30:42" hostname="Adranoobs-MacBook-Pro.local" time="0.076">
+  <properties/>
+  <testcase name="dealWithMultiply" classname="priv.jj.calculator.ParserTest" time="0.0"/>
+  <testcase name="hasValidSyntax" classname="priv.jj.calculator.ParserTest" time="0.002"/>
+  <testcase name="tokenize" classname="priv.jj.calculator.ParserTest" time="0.0"/>
+  <testcase name="moreHybridTests" classname="priv.jj.calculator.ParserTest" time="0.001"/>
+  <testcase name="parserExpressionList_someTestAndPlus" classname="priv.jj.calculator.ParserTest" time="0.011"/>
+  <testcase name="indexOfPairedBracket" classname="priv.jj.calculator.ParserTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

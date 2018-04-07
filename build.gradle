@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+//mainClassName = 'priv.jj.calculator.view.Main.main'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+mainClassName = 'priv.jj.calculator.view.Main'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile "junit:junit:4.12"
+}
+
+jar {
+    baseName = 'calculator'
+    version = '1.0'
+    manifest {
+        attributes(
+                'Main-Class': 'priv.jj.calculator.view.Main'
+        )
+    }
+}
+
